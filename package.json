@@ -1,6 +1,6 @@
 {
   "name": "consistent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Consistent hashing for Node.JS",
   "main": "index.js",
   "repository": {
@@ -19,5 +19,8 @@
     "hashing"
   ],
   "author": "Ekin Koc",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lru-cache": "^2.5.0"
+  }
 }

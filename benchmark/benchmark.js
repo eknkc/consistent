@@ -27,7 +27,11 @@ suite('get', function() {
     };
 
     bench('get (' + n + ' members)', function () {
-      ins.get(Math.random() + '');
+      ins.get(Math.floor(Math.random() * 100) + '');
+    })
+
+    bench('getCached (' + n + ' members)', function () {
+      ins.getCached(Math.floor(Math.random() * 100) + '');
     })
   };
 

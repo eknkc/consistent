@@ -59,6 +59,7 @@ ring.replace('member1', 'member5');
 
 ```js
 ring.get('some key');
+ring.getCached('some key'); //use lru cache
 ```
 
 ## author
