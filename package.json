@@ -1,0 +1,23 @@
+{
+  "name": "consistent",
+  "version": "1.0.0",
+  "description": "Consistent hashing for Node.JS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eknkc/consistent.git"
+  },
+  "devDependencies": {
+    "matcha": "^0.6.0",
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "consistent",
+    "hashing"
+  ],
+  "author": "Ekin Koc",
+  "license": "MIT"
+}
