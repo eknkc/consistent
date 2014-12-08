@@ -20,7 +20,8 @@ var ring = consistent({
       key: "member3",
       weight: 1.5 // optional, default weight is 1
     }
-  ]
+  ],
+  hash: 'md5' // can use 'md5' or 'murmurhash'
 });
 
 console.log(ring.get('some key'));
