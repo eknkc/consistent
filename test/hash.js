@@ -48,7 +48,7 @@ describe('hashing', function () {
     })
 
     it ('should have low stdev with murmurhash3', function () {
-      test('murmurhash3');
+      test('murmurhash');
     })
   });
 })
