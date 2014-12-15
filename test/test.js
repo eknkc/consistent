@@ -44,7 +44,7 @@ describe('consistent', function () {
     var keys = [];
 
     for(var i = 0; i < 10; i++) {
-      var x = crypto.randomBytes(10000000).toString('hex');
+      var x = crypto.randomBytes(1000000).toString('hex');
       assert.ok(members.indexOf(c.get(x)) > -1);
       keys.push(x);
     }
@@ -67,32 +67,19 @@ describe('consistent', function () {
 
   });
 
-  it('should distribute keys if member added', function (done) {
-    var members = ['test1', 'test2', 'test3'];
-    var c = consistent({ members: members });
-    var keys = [];
+  it('should refresh hash key if members are changed', function (done) {
+    var c = consistent({ members: ['test1', 'test2', 'test3', 'test4', 'test5'] });
+    var h = c.getCached('111');
 
-    for(var i = 0; i < 10; i++) {
-      var x = crypto.randomBytes(4).toString('hex');
-      assert.ok(members.indexOf(c.get(x)) > -1);
-      keys.push(x);
-    }
+    c.remove('test5')
+    var h2 = c.getCached('111');
 
-    c.add('test4');
-    members.push('test4');
+    c.replace('test2', 'newAdded');
+    var h3 = c.getCached('111');
 
-    keys.forEach(function (i) {
-      assert.ok(members.indexOf(c.get(i)) > -1);
-    });
+    assert.notEqual(h, h2, 'should refresh key');
+    assert.notEqual(h2, h3, 'should refresh key');
 
-    c.add('test5');
-    members.push('test5');
-
-    keys.forEach(function (i) {
-      assert.ok(members.indexOf(c.get(i)) > -1);
-    });
-
-    done();
-
-  })
+    done()
+  });
 });
