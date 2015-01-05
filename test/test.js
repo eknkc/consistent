@@ -19,6 +19,24 @@ describe('consistent', function () {
     assert.ok(c.members['test']);
   });
 
+  it('should return correct length', function() {
+    var c = consistent();
+    assert.ok(c.length == 0);
+    c.add('test');
+    assert.ok(c.length == 1);
+    c.add('test2');
+    assert.ok(c.length == 2);
+    c.remove('test');
+    assert.ok(c.length == 1);
+  });
+
+  it('should check membership', function() {
+    var c = consistent();
+    assert.ok(c.exists('test') === false);
+    c.add('test');
+    assert.ok(c.exists('test'));
+  });
+
   it('should remove member', function() {
     var c = consistent();
     c.add('test');

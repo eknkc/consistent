@@ -14,19 +14,19 @@ describe('hashing', function () {
 
       var counts = {};
 
-      for (var i = 0; i < 100000; i++) {
+      for (var i = 0; i < 10000; i++) {
         var h = c.get(String(i));
         counts[h] = counts[h] || 0;
         counts[h]++;
       };
 
-      for (var i = 0; i < 100000; i++) {
+      for (var i = 0; i < 10000; i++) {
         var h = c.get(crypto.randomBytes(16).toString('hex'));
         counts[h] = counts[h] || 0;
         counts[h]++;
       };
 
-      for (var i = 0; i < 100000; i++) {
+      for (var i = 0; i < 10000; i++) {
         var h = c.get("key" + i);
         counts[h] = counts[h] || 0;
         counts[h]++;

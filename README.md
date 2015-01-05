@@ -63,6 +63,18 @@ ring.get('some key');
 ring.getCached('some key'); //use lru cache
 ```
 
+### check if a member exists
+
+```js
+ring.exists('member1') // returns true if a member has been added with name member1
+```
+
+### get member count
+
+```js
+ring.length; // returns number of members within the ring
+```
+
 ## author
 Ekin Koc
 
