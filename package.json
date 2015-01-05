@@ -1,6 +1,6 @@
 {
   "name": "consistent",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Consistent hashing for Node.JS",
   "main": "index.js",
   "repository": {
